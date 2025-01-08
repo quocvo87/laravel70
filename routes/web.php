@@ -51,3 +51,8 @@ Route::group(['prefix'=>'auto-bind-params'], function(){
         'as' => 'user.postWithHeader', 'uses'=>'UserParamsController@postWithHeader']);
     Route::get('/config', 'UserParamsController@getConfig');
 });
+
+Route::prefix('save-variable')->group(function () {
+    Route::get('/', 'SaveVariableController@index');
+});
+
