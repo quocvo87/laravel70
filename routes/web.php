@@ -51,3 +51,8 @@ Route::group(['prefix'=>'auto-bind-params'], function(){
         'as' => 'user.postWithHeader', 'uses'=>'UserParamsController@postWithHeader']);
     Route::get('/config', 'UserParamsController@getConfig');
 });
+
+Route::group(['prefix'=>'form'], function(){
+    Route::get('/token',['as' => 'form.token', 'uses' => 'FormController@token']);
+    Route::post('/token',['as' => 'form.token', 'uses' => 'FormController@token']);
+});
